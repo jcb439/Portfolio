@@ -343,6 +343,24 @@ hr {
         flex: 1 1 45%;
         min-width: 120px;
     }
+
+    /* Projects List Tablet - keep side by side but smaller */
+    .project-list-image {
+        width: 250px;
+        height: 175px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Projects List Phone - stack vertically */
+    .project-list-item {
+        flex-direction: column;
+    }
+
+    .project-list-image {
+        width: 100%;
+        height: 200px;
+    }
 }
 
 /* Resume Filter Buttons */
@@ -423,4 +441,65 @@ hr {
 
 .skill-category li:last-child {
     margin-bottom: 0;
+}
+
+/* Projects List Layout */
+.projects-list {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+.project-list-item {
+    display: flex;
+    gap: 2rem;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+    align-items: flex-start;
+}
+
+.project-list-item:hover {
+    opacity: 0.8;
+}
+
+.project-list-image {
+    flex-shrink: 0;
+    width: 500px;
+    height: 350px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.project-list-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.project-list-content {
+    flex: 1;
+}
+
+.project-list-content h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.project-list-content .caption {
+    margin-bottom: 1rem;
+}
+
+.project-list-content p {
+    margin-bottom: 1rem;
+}
+
+.learn-more {
+    color: var(--swatch-3);
+    font-size: 0.95rem;
+    margin-bottom: 0 !important;
+}
+
+.project-list-item:hover .learn-more {
+    color: var(--swatch-1);
 }

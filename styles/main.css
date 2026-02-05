@@ -384,3 +384,43 @@ hr {
 .resume-item:last-child {
     margin-bottom: 0;
 }
+
+/* Skills Grid */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.skill-category {
+    padding: 1.5rem;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    transition: border-color 0.2s ease;
+}
+
+.skill-category:hover {
+    border-color: var(--swatch-3);
+}
+
+.skill-category h3 {
+    margin-bottom: 0.75rem;
+    font-size: 1.1rem;
+}
+
+.skill-category ul {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+    margin: 0;
+}
+
+.skill-category li {
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+    color: var(--swatch-1);
+}
+
+.skill-category li:last-child {
+    margin-bottom: 0;
+}

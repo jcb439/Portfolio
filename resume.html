@@ -7,38 +7,154 @@
     <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <nav class="navigation">
-        <a href="index.html" class="nav-brand">Julia Beitel</a>
-        <div class="nav-links">
-            <a href="index.html" class="nav-link">Projects</a>
-            <a href="about.html" class="nav-link">About</a>
-            <a href="contact.html" class="nav-link">Contact</a>
-        </div>
-    </nav>
+    <!-- Navigation Placeholder -->
+    <div id="nav-placeholder"></div>
 
     <div class="content-wrapper">
         <div class="main-content">
             <div class="container">
-                <!-- Content will go here -->
+                <header class="site-header">
+                    <h1>Resume</h1>
+                    <h2>Designer / Engineer / Researcher</h2>
+                </header>
+
+                <hr>
+
+                <!-- Filter Navigation -->
+                <div class="resume-filters">
+                    <button class="filter-btn active" data-filter="education">Education</button>
+                    <button class="filter-btn" data-filter="experience">Experience</button>
+                    <button class="filter-btn" data-filter="leadership">Leadership</button>
+                    <button class="filter-btn" data-filter="skills">Skills</button>
+                </div>
+
+                <hr>
+
+                <!-- Education Section -->
+                <section class="resume-section" data-category="education">
+                    <div class="resume-item">
+                        <h3>Master of Science in Design Technology (Studio Track)</h3>
+                        <p class="caption">Cornell University, August 2024 – May 2026</p>
+                    </div>
+                    
+                    <div class="resume-item">
+                        <h3>Bachelor of Arts in Information Science</h3>
+                        <p class="caption">Cornell University, August 2020 – May 2024</p>
+                        <p>Minor in Environment & Sustainability</p>
+                    </div>
+
+                    <div class="resume-item">
+                        <h3>High School Diploma</h3>
+                        <p class="caption">University Prep, August 2016 – May 2020</p>
+                    </div>
+
+                    <div class="resume-item">
+                        <h3>Study Abroad</h3>
+                        <p class="caption">The Island School, February 2019 – May 2019</p>
+                    </div>
+                </section>
+
+                <!-- Experience Section -->
+                <section class="resume-section" data-category="experience" style="display: none;">
+                    <div class="resume-item">
+                        <h3>Teaching Assistant & Program Coordinator</h3>
+                        <p class="caption">Cornell Tech, May 2025 – Jul 2025</p>
+                        <p>Assisted in teaching two summer courses for the Milstein Program at Cornell Tech: Digital Making & Civic Innovation. Supervised 20+ undergraduate students during summer activities in New York City.</p>
+                    </div>
+
+                    <div class="resume-item">
+                        <h3>Talent Relations</h3>
+                        <p class="caption">Croissant, Jun 2024 – Aug 2024</p>
+                        <p>Supported and managed the launch of the Croissant mobile application through influencer marketing campaigns (TikTok, Instagram, and Substack).</p>
+                    </div>
+
+                    <div class="resume-item">
+                        <h3>Sustainable Systems Research Intern</h3>
+                        <p class="caption">Cape Eleuthera Institute, May 2023 – August 2023</p>
+                        <p>Engaged in mycelium composite brick production by inoculating mushrooms. Conducted data collection and analysis for facility tree identification and aquaponics systems, supporting ongoing research initiatives. Presented on modern applications and potential future uses of mycelium as a sustainable material in fashion design.</p>
+                    </div>
+
+                    <div class="resume-item">
+                        <h3>Milstein Program Researcher</h3>
+                        <p class="caption">Cornell University, August 2021 – May 2023</p>
+                        <p>With local voice actors, technologically produced narrative audio pieces of Black Americans finding freedom from slavery on The Underground Railroad in the Finger Lakes Region of Upstate New York. Later worked on UX/UI design expansion and engagement analysis for the <a href="https://voicesontheurr.cornell.edu/" target="_blank">website</a>.</p>
+                    </div>
+
+                    <div class="resume-item">
+                        <h3>New York Civic Engagement Commission Researcher</h3>
+                        <p class="caption">Milstein Program, June 2022 – July 2022</p>
+                        <p>Completed an auditing framework to evaluate non-profit proposals submitted to New York City.</p>
+                    </div>
+
+                    <div class="resume-item">
+                        <h3>Coastal Habitat & Field Research Project</h3>
+                        <p class="caption">Shoals Marine Lab, June 2021 – July 2021</p>
+                        <p>Conducted an independent research project surveying plant coverage and lake biodiversity on Appledore Island, NH.</p>
+                    </div>
+
+                    <div class="resume-item">
+                        <h3>Aquaponics Researcher</h3>
+                        <p class="caption">Cape Eleuthera Institute, February 2019 – June 2019</p>
+                        <p>Conducted research on crop abundance during summer months and evaluated cooling system methods through comparative testing</p>
+
+                    </div>
+                </section>
+
+                <!-- Leadership Section -->
+                <section class="resume-section" data-category="leadership" style="display: none;">
+                    <div class="resume-item">
+                        <h3>Leadership Role</h3>
+                        <p class="caption">Organization Name, 20XX - 20XX</p>
+                        <p>Description of your leadership experience and impact.</p>
+                    </div>
+                </section>
+
+                <!-- Skills Section -->
+                <section class="resume-section" data-category="skills" style="display: none;">
+                    <div class="resume-item">
+                        <h3>Design & Fabrication</h3>
+                        <p>Rhino, Grasshopper, AutoCAD, 3D Printing, CNC Milling, Laser Cutting</p>
+                    </div>
+                    
+                    <div class="resume-item">
+                        <h3>Programming & Development</h3>
+                        <p>Python, JavaScript, HTML/CSS, Processing, Arduino</p>
+                    </div>
+                </section>
+
+                <script>
+                    // Filter functionality
+                    document.addEventListener('DOMContentLoaded', function() {
+                        const filterBtns = document.querySelectorAll('.filter-btn');
+                        const sections = document.querySelectorAll('.resume-section');
+
+                        filterBtns.forEach(btn => {
+                            btn.addEventListener('click', function() {
+                                const filter = this.getAttribute('data-filter');
+
+                                // Update active button
+                                filterBtns.forEach(b => b.classList.remove('active'));
+                                this.classList.add('active');
+
+                                // Show/hide sections
+                                sections.forEach(section => {
+                                    if (section.getAttribute('data-category') === filter) {
+                                        section.style.display = 'block';
+                                    } else {
+                                        section.style.display = 'none';
+                                    }
+                                });
+                            });
+                        });
+                    });
+                </script>
             </div>
         </div>
 
-        <!-- Footer -->
-        <footer class="site-footer">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <a href="index.html" class="footer-link">Portfolio</a>
-                    <a href="about.html" class="footer-link">About</a>
-                    <a href="index.html" class="footer-link">Projects</a>
-                </div>
-                <div class="footer-column">
-                    <a href="contact.html" class="footer-link">Contact</a>
-                    <a href="https://www.linkedin.com/in/yourprofile" class="footer-link" target="_blank">LinkedIn</a>
-                    <a href="resume.html" class="footer-link">Resume</a>
-                </div>
-            </div>
-        </footer>
+        <!-- Footer Placeholder -->
+        <div id="footer-placeholder"></div>
     </div>
+
+    <script src="scripts/load-components.js"></script>
 </body>
 </html>

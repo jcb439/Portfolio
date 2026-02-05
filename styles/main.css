@@ -462,3 +462,562 @@ hr {
         gap: 2rem;
     }
 }
+
+/*julia debuggine */
+
+/* CSS Variables */
+:root {
+    --swatch-1: rgba(0, 0, 0, 0.85);
+    --swatch-2: rgba(0, 0, 0, 0.75);
+    --swatch-3: rgba(0, 0, 0, 0.6);
+    --swatch-4: rgba(0, 0, 0, 0.4);
+    --swatch-5: rgba(0, 0, 0, 0.25);
+}
+
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: "Courier New", "Monaco", monospace;
+    background-color: #ffffff;
+    color: var(--swatch-1);
+    line-height: 1.2;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Typography */
+h1 {
+    font-family: "Courier New", "Monaco", monospace;
+    font-style: normal;
+    font-weight: 400;
+    margin: 0;
+    font-size: 3.5rem;
+    line-height: 0.9;
+    color: var(--swatch-1);
+    letter-spacing: 0em;
+}
+
+h2 {
+    font-family: "Courier New", "Monaco", monospace;
+    font-style: normal;
+    font-weight: 500;
+    margin: 0;
+    color: var(--swatch-4);
+    font-size: 2rem;
+    line-height: 1.3;
+    letter-spacing: 0em;
+}
+
+h3 {
+    font-family: "Courier New", "Monaco", monospace;
+    font-style: normal;
+    font-weight: 500;
+    margin: 0;
+    color: var(--swatch-1);
+    font-size: 1.2rem;
+    line-height: 1.2;
+    letter-spacing: 0em;
+}
+
+p {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--swatch-1);
+    line-height: 1.5;
+    margin-bottom: 1rem;
+}
+
+.caption {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--swatch-2);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-style: normal;
+    line-height: 1.2;
+    letter-spacing: 0em;
+    display: block;
+}
+
+/* Links */
+a {
+    color: var(--swatch-1);
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+a:hover {
+    opacity: 0.7;
+}
+
+a:active {
+    opacity: 0.7;
+}
+
+/* Horizontal Rule */
+hr {
+    background: rgba(0, 0, 0, 0.15);
+    border: 0;
+    height: 1px;
+    display: block;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* Layout */
+.content-wrapper {
+    flex: 1;
+}
+
+.container {
+    max-width: 70%;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+/* Navigation */
+.navigation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #ffffff;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+.nav-brand {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--swatch-1);
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-link {
+    font-size: 1rem;
+    color: var(--swatch-3);
+    text-decoration: none;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--swatch-1);
+}
+
+/* Main Content Area */
+.main-content {
+    margin-top: 6rem;
+    padding-bottom: 3rem;
+}
+
+/* Footer */
+.site-footer {
+    background-color: #ffffff;
+    border-top: 1px solid rgba(0, 0, 0, 0.15);
+    padding: 3rem 2rem 2rem;
+    margin-top: auto;
+}
+
+.footer-content {
+    max-width: 70%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-end;
+    gap: 4rem;
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.footer-link {
+    font-size: 0.95rem;
+    color: var(--swatch-3);
+    text-decoration: none;
+    line-height: 1.6;
+}
+
+.footer-link:hover {
+    color: var(--swatch-1);
+}
+
+/* Projects Grid */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
+}
+
+.project-card {
+    display: block;
+    text-decoration: none;
+    transition: transform 0.2s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-image {
+    width: 100%;
+    height: 250px;
+    background: rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    position: relative;
+    border-radius: 10px;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s ease;
+}
+
+/* Hover Overlay */
+.project-image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    text-align: center;
+    border-radius: 10px;
+    z-index: 10;
+}
+
+.project-image:hover .project-image-overlay {
+    opacity: 1;
+}
+
+.project-image-overlay h3 {
+    color: #ffffff;
+    font-size: 1.5rem;
+    margin-bottom: 0.8rem;
+}
+
+.project-image-overlay .caption {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+/* Hover Overlay */
+.project-image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    text-align: center;
+}
+
+.project-image:hover .project-image-overlay {
+    opacity: 1;
+}
+
+.project-image-overlay h3 {
+    color: #ffffff;
+    font-size: 1.5rem;
+    margin-bottom: 0.8rem;
+}
+
+.project-image-overlay .caption {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        max-width: 100%;
+        padding: 1rem;
+    }
+
+    .navigation {
+        padding: 1rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .nav-links {
+        gap: 1.5rem;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .main-content {
+        margin-top: 8rem;
+    }
+
+    .footer-content {
+        max-width: 100%;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .resume-filters {
+        flex-wrap: wrap;
+    }
+
+    .filter-btn {
+        flex: 1 1 45%;
+        min-width: 120px;
+    }
+
+    /* Projects List Tablet - keep side by side but smaller */
+    .project-list-image {
+        width: 250px;
+        height: 175px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Projects List Phone - stack vertically */
+    .project-list-item {
+        flex-direction: column;
+    }
+
+    .project-list-image {
+        width: 100%;
+        height: 200px;
+    }
+}
+
+/* Resume Filter Buttons */
+.resume-filters {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin: 2rem 0;
+}
+
+.filter-btn {
+    font-family: "Courier New", "Monaco", monospace;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0.75rem 2rem;
+    background-color: transparent;
+    color: var(--swatch-3);
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.filter-btn:hover {
+    color: var(--swatch-1);
+    border-color: var(--swatch-3);
+}
+
+.filter-btn.active {
+    background-color: var(--swatch-1);
+    color: #ffffff;
+    border-color: var(--swatch-1);
+}
+
+.resume-item {
+    margin-bottom: 2rem;
+}
+
+.resume-item:last-child {
+    margin-bottom: 0;
+}
+
+/* Skills Grid */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.skill-category {
+    padding: 1.5rem;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    transition: border-color 0.2s ease;
+}
+
+.skill-category:hover {
+    border-color: var(--swatch-3);
+}
+
+.skill-category h3 {
+    margin-bottom: 0.75rem;
+    font-size: 1.1rem;
+}
+
+.skill-category ul {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+    margin: 0;
+}
+
+.skill-category li {
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+    color: var(--swatch-1);
+}
+
+.skill-category li:last-child {
+    margin-bottom: 0;
+}
+
+/* Projects List Layout */
+.projects-list {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+.project-list-item {
+    display: flex;
+    gap: 2rem;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+    align-items: flex-start;
+}
+
+.project-list-item:hover {
+    opacity: 0.8;
+}
+
+.project-list-image {
+    flex-shrink: 0;
+    width: 500px;
+    height: 350px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.project-list-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.project-list-content {
+    flex: 1;
+}
+
+.project-list-content h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.project-list-content .caption {
+    margin-bottom: 1rem;
+}
+
+.project-list-content p {
+    margin-bottom: 1rem;
+}
+
+.learn-more {
+    color: var(--swatch-3);
+    font-size: 0.95rem;
+    margin-bottom: 0 !important;
+}
+
+.project-list-item:hover .learn-more {
+    color: var(--swatch-1);
+}
+
+/* Category Filters */
+.category-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+    margin: 2rem 0;
+}
+
+.category-btn {
+    font-family: "Courier New", "Monaco", monospace;
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding: 0.4rem 0.9rem;
+    background-color: transparent;
+    color: var(--swatch-3);
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.category-btn:hover {
+    color: var(--swatch-1);
+    border-color: var(--swatch-3);
+}
+
+.category-btn.active {
+    background-color: var(--swatch-1);
+    color: #ffffff;
+    border-color: var(--swatch-1);
+}
+
+/* Project Tags */
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.tag {
+    font-size: 0.85rem;
+    padding: 0.4rem 1rem;
+    background-color: rgba(0, 0, 0, 0.08);
+    color: var(--swatch-2);
+    border-radius: 20px;
+    font-family: "Courier New", "Monaco", monospace;
+}

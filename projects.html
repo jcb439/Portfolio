@@ -19,125 +19,197 @@
 
                 <hr>
 
+                <!-- Category Filters -->
+                <div class="category-filters">
+                    <button class="category-btn active" data-category="all">All Projects</button>
+                    <button class="category-btn" data-category="sustainable">Sustainable Systems</button>
+                    <button class="category-btn" data-category="ai-behavioral">AI & Behavioral Design</button>
+                    <button class="category-btn" data-category="parametric">Computational & Parametric Design</button>
+                    <button class="category-btn" data-category="physical">Physical Interaction & Sensing</button>
+                </div>
+
+                <hr>
+
                 <!-- Projects List -->
                 <div class="projects-list">
                     <!-- Project 1 -->
-                    <a href="projects/resilient-walls.html" class="project-list-item">
+                    <a href="projects/resilient-walls.html" class="project-list-item" data-categories="sustainable parametric">
                         <div class="project-list-image">
                             <img src="images/projects/hero/resilientwalls_hero.png" alt="Resilient Walls">
                         </div>
                         <div class="project-list-content">
                             <h3>Resilient Walls</h3>
                             <p class="caption">Biomimetics in Design (2025)</p>
+                            <div class="project-tags">
+                                <span class="tag">Sustainable Systems</span>
+                                <span class="tag">Computational & Parametric Design</span>
+                            </div>
                             <p>Resilient Walls is a design project focused on developing lightweight, load-optimized modular brick systems that withstand extreme flooding and extreme weather. Using computational design and topology optimization techniques, this project addresses the challenge and creates efficient, modular bricks that balance strength, material use, and code deployability for resilient infrastructure.</p>
                             <p class="learn-more">Learn more...</p>
                         </div>
                     </a>
 
                     <!-- Project 2 -->
-                    <a href="projects/airbend.html" class="project-list-item">
+                    <a href="projects/airbend.html" class="project-list-item" data-categories="sustainable physical">
                         <div class="project-list-image">
                             <img src="images/projects/hero/airbend_hero.png" alt="Airbend">
                         </div>
                         <div class="project-list-content">
                             <h3>AirBend</h3>
                             <p class="caption">Design Studio (2025)</p>
+                            <div class="project-tags">
+                                <span class="tag">Sustainable Systems</span>
+                                <span class="tag">Physical Interaction & Sensing</span>
+                            </div>
                             <p>AirBend is a passive-cooling wearable that enhances thermal comfort through the body's natural movement, offering a low-power alternative to traditional cooling devices. Using fabric-based valves, integrated sensors for airflow mapping data, and computational optimization, the project leverages bioinspired mechanisms that maximizes airflow while maintaining comfort and wearability.</p>
                             <p class="learn-more">Learn more...</p>
                         </div>
                     </a>
 
                     <!-- Project 3 -->
-                    <a href="projects/buzzfinder.html" class="project-list-item">
+                    <a href="projects/buzzfinder.html" class="project-list-item" data-categories="physical">
                         <div class="project-list-image">
                             <img src="images/projects/hero/buzzfinder_hero.png" alt="Buzzfinder">
                         </div>
                         <div class="project-list-content">
                             <h3>BuzzFinder</h3>
                             <p class="caption">Design for Physical Interaction (2025)</p>
+                            <div class="project-tags">
+                                <span class="tag">Physical Interaction & Sensing</span>
+                            </div>
                             <p>BuzzFinder is a wearable assistive device exploring how AI can extend the capabilities of the visually impaired while navigating an appointment or blindness when sensing nearby objects or directions. Ultrasonic sensors embedded in glasses detect surrounding objects, while vibrations inform the wearer—a necklace translates distance into intuitive, real-time feedback.</p>
                             <p class="learn-more">Learn more...</p>
                         </div>
                     </a>
 
-                    <!-- Project 3 -->
-                    <a href="projects/rjoint.html" class="project-list-item">
+                    <!-- Project 4 -->
+                    <a href="projects/rjoint.html" class="project-list-item" data-categories="parametric">
                         <div class="project-list-image">
                             <img src="images/projects/hero/rjoint_hero.png" alt="R-Joint">
                         </div>
                         <div class="project-list-content">
                             <h3>rJoint</h3>
                             <p class="caption">Redesigning Timber Joinery (2024)</p>
+                            <div class="project-tags">
+                                <span class="tag">Computational & Parametric Design</span>
+                            </div>
                             <p>The r joint is a modular connection system designed for prefabricated construction featuring snapping teeth that compress into position and cantilever clips on an engraved surface. A novel design that uses standardized and optimized with calibrated speeds and material properties to facilitate CNC fabrication into an extant timber part.</p>
                             <p class="learn-more">Learn more...</p>
                         </div>
                     </a>
 
-                    <!-- Project 4 -->
-                    <a href="projects/reef-project.html" class="project-list-item">
+                    <!-- Project 5 -->
+                    <a href="projects/reef-project.html" class="project-list-item" data-categories="sustainable parametric">
                         <div class="project-list-image">
                             <img src="images/projects/hero/reefproject_hero.webp" alt="Reef Project">
                         </div>
                         <div class="project-list-content">
                             <h3>The Reef Project</h3>
                             <p class="caption">Transformable Design (2025)</p>
+                            <div class="project-tags">
+                                <span class="tag">Sustainable Systems</span>
+                                <span class="tag">Computational & Parametric Design</span>
+                            </div>
                             <p>The Reef Project presents a transformable artificial reef module that addresses the logistical challenges of transport and requires labor-intensive operations, which rely on heavy, rigid structures that are difficult and expensive. Drawing inspiration from origami and scissor- mechanism framework to collapse into a compact, transportable form, then expand into a stable structure.</p>
                             <p class="learn-more">Learn more...</p>
                         </div>
                     </a>
 
-                    <!-- Project 5 -->
-                    <a href="projects/drum-vase.html" class="project-list-item">
+                    <!-- Project 6 -->
+                    <a href="projects/drum-vase.html" class="project-list-item" data-categories="ai-behavioral physical">
                         <div class="project-list-image">
                             <img src="images/projects/hero/drumvase_hero.png" alt="Drum Vase">
                         </div>
                         <div class="project-list-content">
                             <h3>Drum & Vase</h3>
                             <p class="caption">Design For Physical Interaction (2024)</p>
+                            <div class="project-tags">
+                                <span class="tag">AI & Behavioral Design</span>
+                                <span class="tag">Physical Interaction & Sensing</span>
+                            </div>
                             <p>Drum & Vase is an AI-Powered music generator that uses environmental sensors—including through cameras and water sensors—to proximity detect presence of objects generating ambient compositions that reflect the character of its environment. The project explores how AI can transcend conventional user interfaces by bringing it closer to human emotional experience and spatial understanding.</p>
                             <p class="learn-more">Learn more...</p>
                         </div>
                     </a>
 
-                    <!-- Project 6 -->
-                    <a href="projects/organizeit.html" class="project-list-item">
+                    <!-- Project 7 -->
+                    <a href="projects/organizeit.html" class="project-list-item" data-categories="parametric">
                         <div class="project-list-image">
                             <img src="images/projects/hero/organizeit_hero.png" alt="OrganizeIt">
                         </div>
                         <div class="project-list-content">
                             <h3>OrganizeIt!</h3>
                             <p class="caption">Coding For Design (2024)</p>
+                            <div class="project-tags">
+                                <span class="tag">Computational & Parametric Design</span>
+                            </div>
                             <p>Organize It is a closet design tool built in Grasshopper that allows users to input their closet dimensions and desired storage configuration through visual sliders and straightforward controls. The platform demonstrates exploitation of rectangular packing algorithms and standard building dimensions to automate the process of closet design by offering personalized, space-optimized layouts. This application aims at the democratization of access to personalized and quality of traditional interior design services.</p>
                             <p class="learn-more">Learn more...</p>
                         </div>
                     </a>
 
-                    <!-- Project 7 -->
-                    <a href="projects/homegreens.html" class="project-list-item">
+                    <!-- Project 8 -->
+                    <a href="projects/homegreens.html" class="project-list-item" data-categories="sustainable ai-behavioral">
                         <div class="project-list-image">
                             <img src="images/projects/hero/homegreens_hero.webp" alt="HomeGreens">
                         </div>
                         <div class="project-list-content">
                             <h3>HomeGreens</h3>
                             <p class="caption">Product Studio (2025–Present)</p>
+                            <div class="project-tags">
+                                <span class="tag">Sustainable Systems</span>
+                                <span class="tag">AI & Behavioral Design</span>
+                            </div>
                             <p>HomeGreens is an AI-powered gardening platform that uses AR scanning and real-time climate data to assist both beginner and experienced gardeners. The app offers intelligent plant selection, personalized care reminders tailored to each user. By capitalizing on plant personalization, community-led support, an integrated marketplace, and social engagement, HomeGreens broadens gardening to online food communities, introduces individuals to confidently grow, play and share.</p>
                             <p class="learn-more">Learn more...</p>
                         </div>
                     </a>
 
-                    <!-- Project 8 -->
-                    <a href="projects/speedbump.html" class="project-list-item">
+                    <!-- Project 9 -->
+                    <a href="projects/speedbump.html" class="project-list-item" data-categories="ai-behavioral">
                         <div class="project-list-image">
                             <img src="images/projects/hero/speedbump_hero.png" alt="Speedbump">
                         </div>
                         <div class="project-list-content">
                             <h3>Shopping Speed Bump</h3>
                             <p class="caption">Specialization Project (2025)</p>
+                            <div class="project-tags">
+                                <span class="tag">AI & Behavioral Design</span>
+                            </div>
                             <p>The Shopping Speed Bump is a behavioral design intervention that inserts a moment of reflection at checkout during the online shopping process. Using a simple browser extension into PAL (Personal AI Librarian) application, the tool nudges users toward mindful system integrates AI-based closet comparison, wardrobe, tracking, and community feedback to goal-tracking and cost-optimized intervention strategies.</p>
                             <p class="learn-more">Learn more...</p>
                         </div>
                     </a>
                 </div>
+
+                <script>
+                    // Category filter functionality
+                    document.addEventListener('DOMContentLoaded', function() {
+                        const categoryBtns = document.querySelectorAll('.category-btn');
+                        const projectItems = document.querySelectorAll('.project-list-item');
+
+                        categoryBtns.forEach(btn => {
+                            btn.addEventListener('click', function() {
+                                const category = this.getAttribute('data-category');
+
+                                // Update active button
+                                categoryBtns.forEach(b => b.classList.remove('active'));
+                                this.classList.add('active');
+
+                                // Filter projects
+                                projectItems.forEach(project => {
+                                    const categories = project.getAttribute('data-categories');
+                                    
+                                    if (category === 'all' || categories.includes(category)) {
+                                        project.style.display = 'flex';
+                                    } else {
+                                        project.style.display = 'none';
+                                    }
+                                });
+                            });
+                        });
+                    });
+                </script>
             </div>
         </div>
 

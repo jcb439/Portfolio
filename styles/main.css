@@ -503,3 +503,54 @@ hr {
 .project-list-item:hover .learn-more {
     color: var(--swatch-1);
 }
+
+/* Category Filters */
+.category-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+    margin: 2rem 0;
+}
+
+.category-btn {
+    font-family: "Courier New", "Monaco", monospace;
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding: 0.4rem 0.9rem;
+    background-color: transparent;
+    color: var(--swatch-3);
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.category-btn:hover {
+    color: var(--swatch-1);
+    border-color: var(--swatch-3);
+}
+
+.category-btn.active {
+    background-color: var(--swatch-1);
+    color: #ffffff;
+    border-color: var(--swatch-1);
+}
+
+/* Project Tags */
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.tag {
+    font-size: 0.85rem;
+    padding: 0.4rem 1rem;
+    background-color: rgba(0, 0, 0, 0.08);
+    color: var(--swatch-2);
+    border-radius: 20px;
+    font-family: "Courier New", "Monaco", monospace;
+}

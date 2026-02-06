@@ -13,6 +13,9 @@
     <div class="content-wrapper">
         <div class="main-content">
             <div class="container">
+                <!-- Back to Projects Link -->
+                <a href="../projects.html" class="back-link">← Back to Projects</a>
+                
                 <header class="site-header">
                     <h1>Resilient Walls</h1>
                     <h2>Lightweight & Load-Optimized Modular Brick Systems</h2>
@@ -22,10 +25,8 @@
 
                 <!-- Project Context Bar -->
                 <section class="project-meta">
-                    <p><strong>Course:</strong> DESIGN 6197 - Special Topics: Biomimetics in Design</p>
-                    <p><strong>Term:</strong> Spring 2025</p>
+                    <p><strong>Course:</strong> DESIGN 6197 - Special Topics: Biomimetics in Design (Spring 2025)</p>
                     <p><strong>Collaborator:</strong> Chi Zhang</p>
-                    <p><strong>Skills:</strong> Grasshopper, Millipede (Topology Optimization), Rhino, 3D Printing, Biomimetics Research</p>
                 </section>
 
                 <hr>
@@ -37,8 +38,7 @@
                     </div>
                     
                     <div class="hero-text-half">
-                        <h3>The Challenge</h3>
-                        <p>In regions most vulnerable to climate change—particularly Small Island Developing States—the need for rapidly deployable, adaptable infrastructure is urgent. More than 60% of the population in Guyana, Tuvalu, and the Bahamas (approximately 10 million people) are exposed to 100-year flood hazards.</p>
+                        <p>In regions most vulnerable to climate change—particularly Small Island Developing States—the need for rapidly deployable, adaptable infrastructure is urgent. More than 60% of the population in Guyana, Tuvalu, and the Bahamas (approximately 10 million people) are exposed to 100-year flood hazards. <a href="https://iopscience.iop.org/article/10.1088/1748-9326/ad78eb" target="_blank">(Archer et al.)</a></p>
                         
                         <p>Traditional solutions like gabion walls are heavy, material-intensive, and difficult to transport and assemble quickly.</p>
                     </div>
@@ -53,115 +53,148 @@
 
                 <!-- Biological Inspiration -->
                 <section class="project-section">
-                    <h3>Biological Inspiration</h3>
+                    <h2>Biological Inspiration</h2>
                     
                     <div class="two-column">
                         <div>
                             <h3>Bird Bones → Lightweight Strength</h3>
                             <img src="../images/projects/resilient-walls/bird-bone-structure.png" alt="Bird bone internal structure showing porosity">
-                            <p>High internal porosity maintains strength while minimizing weight. This natural optimization informed our topology optimization approach for efficient material distribution.</p>
+                            <p>High internal porosity maintains strength while minimizing weight. This natural optimization informed our topology optimization approach for efficient material distribution. <a href="https://www.sciencedirect.com/science/article/pii/S136970211730072X#fig0015" target="_blank">(Sullivan et al.)</a></p>
                         </div>
                         
                         <div>
                             <h3>Conch Shells → Fracture Resistance</h3>
                             <img src="../images/projects/resilient-walls/conch-shell-structure.png" alt="Conch shell lamellar structure">
-                            <p>Three-tiered lamellar structure deflects and dissipates cracks. This principle inspired our grain direction strategy for crack prevention.</p>
+                            <p>Three-tiered lamellar structure deflects and dissipates cracks. This principle inspired our grain direction strategy for crack prevention. <a href="https://www.sciencedirect.com/science/article/pii/S1096495913001978#f0005" target="_blank">(Osuna-Mascaró et al.)</a></p>
                         </div>
                     </div>
                 </section>
 
                 <hr>
 
-                <!-- Design Process -->
-                <section class="project-section">
-                    <h3>Design Process</h3>
+                <!-- Process Carousel -->
+                <section class="process-carousel">
+                    <h3 id="carousel-title">Process: Design</h3>
                     
-                    <h3>Step 1: Topology Optimization</h3>
-                    <img src="../images/projects/resilient-walls/millipede-gradient.png" alt="Millipede topology optimization gradient output">
-                    <p>Using Grasshopper's Millipede plugin, we defined variable loading conditions, generated stress line maps, and identified three density zones for brick types. The gradient output revealed natural stress lines critical to our design.</p>
-                    
-                    <h3>Step 2: Grain Direction Strategy</h3>
-                    <img src="../images/projects/resilient-walls/grain-direction-diagram.png" alt="Diagram showing grain direction mapping">
-                    <p>We aligned internal grain patterns with stress lines from topology optimization and alternated grain patterns in adjacent bricks to deflect crack forces. This created a natural assembly logic based on stress orientation.</p>
-                    
-                    <h3>Step 3: Modular System Design</h3>
-                    <img src="../images/projects/resilient-walls/three-brick-types.png" alt="Three standardized brick types showing density variation">
-                    <p>We standardized brick dimensions at 1:20 scale with a uniform height of 15mm (30cm full-scale) and three lengths: 30mm, 45mm, and 65mm. Three density types were achieved through shell thickness variation.</p>
-                </section>
-
-                <hr>
-
-                <!-- Fabrication Process -->
-                <section class="project-section">
-                    <h3>Fabrication Process: Iteration & Problem-Solving</h3>
-                    
-                    <h3>The Challenge</h3>
-                    <p>How do we control material density and grain direction simultaneously in 3D printed bricks?</p>
-                    
-                    <div class="two-column">
-                        <div>
-                            <h3>Initial Approach</h3>
-                            <img src="../images/projects/resilient-walls/failed-prints.png" alt="Failed print attempts showing unwanted grain patterns">
-                            <p><strong>Problem:</strong> We varied infill density (10%, 30%, 80%), but internal infill patterns created conflicting grain artifacts that overrode our intended grain direction.</p>
+                    <div class="carousel-container">
+                        <!-- Carousel Navigation -->
+                        <button class="carousel-nav carousel-prev" aria-label="Previous slide">‹</button>
+                        <button class="carousel-nav carousel-next" aria-label="Next slide">›</button>
+                        
+                        <!-- Carousel Slides -->
+                        <div class="carousel-wrapper">
+                            <!-- Slide 1: Topology Optimization -->
+                            <div class="carousel-slide active" data-title="Process: Design">
+                                <div class="carousel-images">
+                                    <img src="../images/projects/resilient-walls/millipede-gradient.png" alt="Millipede topology optimization gradient output">
+                                </div>
+                                <div class="carousel-content">
+                                    <h3>Topology Optimization</h3>
+                                    <p>Using Grasshopper's Millipede plugin, we defined variable loading conditions, generated stress line maps, and identified three density zones for brick types. The gradient output revealed natural stress lines critical to our design.</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Slide 2: Grain Direction Strategy -->
+                            <div class="carousel-slide" data-title="Process: Design">
+                                <div class="carousel-images">
+                                    <img src="../images/projects/resilient-walls/grain-direction-diagram.png" alt="Diagram showing grain direction mapping">
+                                </div>
+                                <div class="carousel-content">
+                                    <h3>Grain Direction Strategy</h3>
+                                    <p>We aligned internal grain patterns with stress lines from topology optimization and alternated grain patterns in adjacent bricks to deflect crack forces. This created a natural assembly logic based on stress orientation.</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Slide 3: Modular System Design -->
+                            <div class="carousel-slide" data-title="Process: Design">
+                                <div class="carousel-images">
+                                    <img src="../images/projects/resilient-walls/three-brick-types.png" alt="Three standardized brick types showing density variation">
+                                </div>
+                                <div class="carousel-content">
+                                    <h3>Modular System Design</h3>
+                                    <p>We standardized brick dimensions at 1:20 scale with a uniform height of 15mm (30cm full-scale) and three lengths: 30mm, 45mm, and 65mm. Three density types were achieved through shell thickness variation.</p>
+                                    <img src="../images/projects/resilient-walls/shell-thickness-detail.png" alt="Shell thickness variation detail">
+                                </div>
+                            </div>
+                            
+                            <!-- Slide 4: 3D-Printing -->
+                            <div class="carousel-slide" data-title="Process: Fabrication">
+                                <div class="carousel-images">
+                                    <img src="../images/projects/resilient-walls/successful-prints.png" alt="Successful prints with clear grain direction">
+                                </div>
+                                <div class="carousel-content">
+                                    <h3>3D-Printing</h3>
+                                    <p>Through iterative testing, we developed a fabrication process that supports grain direction. We reduced infill to 0% and achieved material differentiation through shell thickness variation only. Each brick was spatially oriented during printing to align with the intended grain direction, resulting in clear PLA prototypes at 1:20 scale with clean grain expression.</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Slide 5: Assembly System -->
+                            <div class="carousel-slide" data-title="Process: Assembly">
+                                <div class="carousel-images">
+                                    <img src="../images/projects/resilient-walls/assembled-wall.png" alt="Fully assembled wall prototype">
+                                </div>
+                                <div class="carousel-content">
+                                    <h3>Assembly System</h3>
+                                    <p>The gradient map from Millipede acts as assembly instructions. Each brick is placed based on stress line orientation in the layer below, with grain direction alternating to prevent crack propagation. The modular sizing allows for adaptive reuse and reconfiguration.</p>
+                                    <img src="../images/projects/resilient-walls/assembly-sequence.png" alt="Assembly sequence showing building logic">
+                                </div>
+                            </div>
                         </div>
                         
-                        <div>
-                            <h3>Solution</h3>
-                            <img src="../images/projects/resilient-walls/successful-prints.png" alt="Successful prints with clear grain direction">
-                            <p><strong>Success:</strong> We reduced infill to 0% and achieved differentiation through shell thickness only. Each brick was spatially oriented to align with intended grain direction.</p>
+                        <!-- Carousel Indicators -->
+                        <div class="carousel-indicators">
+                            <span class="indicator active" data-slide="0"></span>
+                            <span class="indicator" data-slide="1"></span>
+                            <span class="indicator" data-slide="2"></span>
+                            <span class="indicator" data-slide="3"></span>
+                            <span class="indicator" data-slide="4"></span>
                         </div>
                     </div>
-                    
-                    <p>Through iterative testing, we calibrated optimal parameters for support density and extrusion temperature, resulting in clear PLA prototypes at 1:20 scale with clean grain expression and no artifacts.</p>
                 </section>
 
                 <hr>
 
-                <!-- Assembly System -->
+                <!-- Final Prototypes -->
                 <section class="project-section">
-                    <h3>Assembly System</h3>
-                    <img src="../images/projects/resilient-walls/assembly-sequence.png" alt="Assembly sequence showing building logic">
-                    
-                    <p>The gradient map from Millipede acts as assembly instructions. Each brick is placed based on stress line orientation in the layer below, with grain direction alternating to prevent crack propagation. The modular sizing allows for adaptive reuse and reconfiguration.</p>
-                    
-                    <img src="../images/projects/resilient-walls/assembled-wall.png" alt="Fully assembled wall prototype">
+                    <h2>Final Prototypes</h2>
+                    <img src="../images/projects/resilient-walls/final-prototype.png" alt="Final 1:20 scale prototype with backlighting">
+                    <p>The backlit models show the varying infill densities inspired by the bird bone density optimization properties and the grain directions from spatial orientation during 3D printing inspired by the conch shell fracture deflection properties.</p>
                 </section>
 
                 <hr>
 
                 <!-- Future Development -->
                 <section class="project-section">
-                    <h3>Future Development</h3>
+                    <h2>Future Development</h2>
                     
-                    <h3>Material Innovation</h3>
-                    <img src="../images/projects/resilient-walls/bio-materials.png" alt="Bio-based material alternatives">
-                    <p>We're exploring bio-based filaments (wood-based, biocomposite) to reduce microplastic spread in water sources and enable end-of-life compostability.</p>
+                    <div class="future-dev-item">
+                        <div class="future-dev-content">
+                            <img src="../images/projects/resilient-walls/bio-materials.png" alt="Bio-based material alternatives">
+                            <div>
+                                <h3>Material Innovation</h3>
+                                <p>We're exploring bio-based filaments (wood-based, biocomposite) to reduce microplastic spread in water sources and enable end-of-life compostability. <a href="https://www.compositesworld.com/products/gehr-presents-compostable-recyclable-wood-based-3d-printing-filament-" target="_blank">(Gehr)</a> <a href="https://eastsideprojects.org/events/workshop-introduction-to-3d-printing-with-biomaterials-apply-by-31-january/" target="_blank">(Eastside Projects)</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="future-dev-item">
+                        <div class="future-dev-content">
+                            <img src="../images/projects/resilient-walls/joinery-concept.png" alt="Micro-textured joinery concept">
+                            <div>
+                                <h3>Advanced Joinery</h3>
+                                <p>Inspired by prismatic shell structures, we envision micro-textured friction-based connections that enhance load-bearing capacity without compromising assembly ease. <a href="https://www.americanscientist.org/article/secrets-in-the-shell" target="_blank">(Ballarini et al.)</a></p>
+                            </div>
+                        </div>
+                    </div>
                     
                     <h3>Low-Tech Alternatives</h3>
                     <p>For regions without 3D printing access, we're investigating rammed earth fabrication that maintains grain direction principles while enabling community-based construction methods.</p>
-                    
-                    <h3>Advanced Joinery</h3>
-                    <img src="../images/projects/resilient-walls/joinery-concept.png" alt="Micro-textured joinery concept">
-                    <p>Inspired by prismatic shell structures, we envision micro-textured friction-based connections that enhance load-bearing capacity without compromising assembly ease.</p>
                     
                     <h3>Structural Validation</h3>
                     <p>Future work includes horizontal and lateral force testing for flood conditions, site-specific loading simulations, and validation across real-world environmental scenarios.</p>
                     
                     <h3>Scaling Challenges</h3>
                     <p>Moving from prototype (1:20 scale) to full-scale bricks (15 x 15 x 30 cm) requires research into advanced manufacturing processes to maintain detail resolution and fabrication speed.</p>
-                </section>
-
-                <hr>
-
-                <!-- Impact & Reflection -->
-                <section class="project-section">
-                    <h3>Impact & Reflection</h3>
-                    
-                    <p><strong>What This Project Demonstrates:</strong> Biomimetic design can address real-world climate challenges. Topology optimization enables material efficiency at scale. Additive manufacturing allows precise control of structural properties. Modular systems support adaptability and disaster response.</p>
-                    
-                    <p><strong>Key Learnings:</strong> Iterative fabrication testing is critical for translating digital optimization to physical reality. Material constraints drive design innovation. Computational design must consider both performance and deployability.</p>
-                    
-                    <p><strong>Applications Beyond Disaster Response:</strong> This approach could be applied to temporary infrastructure, adaptive architecture, and sustainable construction in resource-limited contexts.</p>
                 </section>
             </div>
         </div>
@@ -171,5 +204,64 @@
     </div>
 
     <script src="../scripts/load-components.js"></script>
+    
+    <script>
+        // Carousel functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const slides = document.querySelectorAll('.carousel-slide');
+            const indicators = document.querySelectorAll('.indicator');
+            const prevBtn = document.querySelector('.carousel-prev');
+            const nextBtn = document.querySelector('.carousel-next');
+            const carouselTitle = document.getElementById('carousel-title');
+            let currentSlide = 0;
+            
+            function showSlide(n) {
+                // Hide all slides
+                slides.forEach(slide => slide.classList.remove('active'));
+                indicators.forEach(indicator => indicator.classList.remove('active'));
+                
+                // Handle wrap around
+                if (n >= slides.length) currentSlide = 0;
+                if (n < 0) currentSlide = slides.length - 1;
+                
+                // Show current slide
+                slides[currentSlide].classList.add('active');
+                indicators[currentSlide].classList.add('active');
+                
+                // Update title based on current slide's data-title attribute
+                const newTitle = slides[currentSlide].getAttribute('data-title');
+                if (newTitle) {
+                    carouselTitle.textContent = newTitle;
+                }
+            }
+            
+            function nextSlide() {
+                currentSlide++;
+                showSlide(currentSlide);
+            }
+            
+            function prevSlide() {
+                currentSlide--;
+                showSlide(currentSlide);
+            }
+            
+            // Event listeners
+            prevBtn.addEventListener('click', prevSlide);
+            nextBtn.addEventListener('click', nextSlide);
+            
+            indicators.forEach((indicator, index) => {
+                indicator.addEventListener('click', () => {
+                    currentSlide = index;
+                    showSlide(currentSlide);
+                });
+            });
+            
+            // Keyboard navigation
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowLeft') prevSlide();
+                if (e.key === 'ArrowRight') nextSlide();
+            });
+        });
+    </script>
 </body>
 </html>

@@ -1,8 +1,9 @@
 // Load navigation and footer dynamically
 document.addEventListener('DOMContentLoaded', function() {
-    // Determine the correct base path
-    const pathDepth = window.location.pathname.split('/').filter(p => p && p !== 'index.html').length;
-    const basePath = pathDepth > 1 ? '../'.repeat(pathDepth - 1) : '';
+    // Determine if we're in a subfolder (like projects/)
+    const path = window.location.pathname;
+    const isInSubfolder = path.includes('/projects/');
+    const basePath = isInSubfolder ? '../' : '';
     
     // Load navigation
     fetch(basePath + 'nav.html')
@@ -12,13 +13,13 @@ document.addEventListener('DOMContentLoaded', function() {
             if (navPlaceholder) {
                 navPlaceholder.innerHTML = data;
                 
-                // Fix navigation links based on current location
-                if (basePath) {
+                // Fix navigation links if we're in a subfolder
+                if (isInSubfolder) {
                     const navLinks = navPlaceholder.querySelectorAll('a');
                     navLinks.forEach(link => {
                         const href = link.getAttribute('href');
-                        if (href && !href.startsWith('http') && !href.startsWith('#')) {
-                            link.setAttribute('href', basePath + href);
+                        if (href && !href.startsWith('http') && !href.startsWith('../')) {
+                            link.setAttribute('href', '../' + href);
                         }
                     });
                 }
@@ -34,13 +35,13 @@ document.addEventListener('DOMContentLoaded', function() {
             if (footerPlaceholder) {
                 footerPlaceholder.innerHTML = data;
                 
-                // Fix footer links based on current location
-                if (basePath) {
+                // Fix footer links if we're in a subfolder
+                if (isInSubfolder) {
                     const footerLinks = footerPlaceholder.querySelectorAll('a');
                     footerLinks.forEach(link => {
                         const href = link.getAttribute('href');
-                        if (href && !href.startsWith('http') && !href.startsWith('#')) {
-                            link.setAttribute('href', basePath + href);
+                        if (href && !href.startsWith('http') && !href.startsWith('../')) {
+                            link.setAttribute('href', '../' + href);
                         }
                     });
                 }

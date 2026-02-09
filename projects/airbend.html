@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Airbend - Julia Beitel</title>
+    <title>AirBend - Julia Beitel</title>
     <link rel="stylesheet" href="../styles/main.css">
 </head>
 <body>
@@ -13,15 +13,376 @@
     <div class="content-wrapper">
         <div class="main-content">
             <div class="container">
+                <!-- Back to Projects Link -->
+                <a href="../projects.html" class="back-link">← Back to Projects</a>
+                
                 <header class="site-header">
-                    <h1>Airbend</h1>
+                    <h1>AirBend</h1>
                     <h2>Passive Cooling Wearable</h2>
                 </header>
 
                 <hr>
 
-                <section>
-                    <p>Project content coming soon...</p>
+                <!-- Project Context Bar -->
+                <section class="project-meta">
+                    <p><strong>Course:</strong> DesignTech Studio (Spring 2025)</p>
+                    <p><strong>Collaborators:</strong> Anxin Lian, Vita Sipayung</p>
+                </section>
+
+                <hr>
+
+                <!-- Hero Image + Challenge Text Side-by-Side -->
+                <section class="hero-with-text">
+                    <div class="hero-image-half">
+                        <img src="../images/projects/airbend/airbend-hero-prototype.png" alt="AirBend prototype worn outdoors showing kirigami cut patterns">
+                    </div>
+                    
+                    <div class="hero-text-half">
+                        <p>AirBend addresses the critical challenge of thermal discomfort faced by users in hot environments made increasingly hotter by global warming. Daily heat exposure is becoming an extremely important global issue, yet most cooling wearables are powered, rigid, and not built for everyday movement.</p>
+                        
+                        <p>There's a need for a passive and flexible solution that cools the body through natural motion. Paired with temperature sensors and a digital app, the AirBend system makes temperature awareness personal, adaptive, and effortless.</p>
+                    </div>
+                </section>
+
+                <!-- How Might We Question -->
+                <section class="hmw-question">
+                    <p>How might we utilize the body's natural bending & motion to passively ventilate users when they are too hot?</p>
+                </section>
+
+                <hr>
+
+                <!-- Precedents -->
+                <section class="project-section">
+                    <h2>Precedents</h2>
+                    
+                    <div class="two-column">
+                        <div>
+                            <h3>Passive Cooling Systems</h3>
+                            <img src="../images/projects/airbend/precedent-biologic.png" alt="bioLogic shape-changing wearables" style="max-width: 70%; height: auto; display: block; margin: 0 auto;">
+                            <p>The Tangible Media Group's bioLogic project uses living Bacillus Subtilis Natto cells as nanoactuators that expand and contract in response to atmospheric moisture. Their "Second Skin" garment features bio-hybrid film that reacts to body heat and sweat, causing flaps around heat zones to open for natural ventilation. (<a href="https://tangible.media.mit.edu/project/biologic/" target="_blank">bioLogic</a>)</p>
+                        </div>
+                        
+                        <div>
+                            <h3>Kirigami Principles</h3>
+                            <img src="../images/projects/airbend/precedent-kirigami.png" alt="Kirigami cut patterns">
+                            <p>The ancient art of kirigami—paper cutting that creates 3D forms from 2D surfaces—provided the foundation for our pattern development. Strategic cuts allow flat materials to expand and transform through tension. (<a href="https://www.nature.com/articles/s43246-023-00357-4" target="_blank">Corrigan et al.</a>)</p>
+                        </div>
+                    </div>
+                </section>
+
+                <hr>
+
+                <!-- System Diagram -->
+                <section class="project-section">
+                    <h2>System Overview</h2>
+                    
+                    <div class="hero-with-text">
+                        <div class="hero-image-half">
+                            <img src="../images/projects/airbend/system-diagram.png" alt="AirBend system diagram showing wearable, sensors, and app integration" class="clickable-image" data-show-explanation="true" style="cursor: pointer;">
+                            <p style="font-size: 0.9rem; margin-top: 0.5rem; text-align: center; font-style: italic;">Click to view full screen</p>
+                        </div>
+                        
+                        <div class="hero-text-half">
+                            <p>AirBend integrates three core methods to maximize user cooling by optimizing shape-changing cut geometries on a wearable. The design process combines geometry exploration to develop kirigami-inspired cut patterns, human form mapping to align openings with high-sweat zones, and material and technology testing to evaluate fabric behavior and sensor integration.</p>
+                            
+                            <p>Our optimization objective was to maximize the total opening area created by cuts while ensuring the wearable conforms to the user's 3D body geometry, following body contours without causing discomfort. Opening geometries were prioritized across body regions most prone to overheating, based on empirical body heat index data.</p>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Image Modal -->
+                <div id="imageModal" class="image-modal" style="display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.9); cursor: pointer; overflow-y: auto;">
+                    <span class="close-modal" style="position: absolute; top: 20px; right: 40px; color: #fff; font-size: 40px; font-weight: bold; cursor: pointer; z-index: 10000;">&times;</span>
+                    <div style="padding: 60px 20px 40px; max-width: 1200px; margin: 0 auto;">
+                        <img id="modalImage" style="display: block; max-width: 70%; height: auto; margin: 0 auto;">
+                        <div id="modalExplanation" style="background-color: rgba(255,255,255,0.95); padding: 2rem; margin-top: 2rem; border-radius: 8px; color: #000; display: none;">
+                            <h3 style="font-family: 'Courier New', Monaco, monospace; font-size: 1.2rem; margin-bottom: 1rem;">How the System Works</h3>
+                            <p style="font-family: 'Courier New', Monaco, monospace; font-size: 1rem; line-height: 1.5; margin: 0;">The system works by first having users input their health and lifestyle information into the companion app—creating a profile with activity patterns, demographics, location, and health conditions. Based on this data, a personalized temperature threshold is established for each user. Embedded sensors in the wearable actively track both body temperature and surrounding air temperature in real-time. When the sensors detect data exceeding the user's personal threshold, they send a push notification alerting the user to perform specific stretching motions. These bending movements passively activate the kirigami-patterned cuts in the wearable, opening ventilation channels that allow air to flow through and cool the body.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <hr>
+
+                <!-- Method 1: Geometry Exploration -->
+                <section class="process-carousel">
+                    <h3 id="carousel-title-1">Method 1: Geometry Exploration</h3>
+                    
+                    <div class="carousel-container">
+                        <!-- Carousel Navigation -->
+                        <button class="carousel-nav carousel-prev" data-carousel="1" aria-label="Previous slide">‹</button>
+                        <button class="carousel-nav carousel-next" data-carousel="1" aria-label="Next slide">›</button>
+                        
+                        <!-- Carousel Slides -->
+                        <div class="carousel-wrapper" data-carousel="1">
+                            <!-- Slide 1: Kirigami Pattern Exploration -->
+                            <div class="carousel-slide active">
+                                <div class="carousel-images">
+                                    <img src="../images/projects/airbend/kirigami-patterns-exploration.png" alt="Four different kirigami patterns explored">
+                                </div>
+                                <div class="carousel-content">
+                                    <h3>Kirigami Pattern Exploration</h3>
+                                    <p>We began by exploring four distinct kirigami-inspired patterns, evaluating each across multiple criteria: texture on skin, opening pattern clarity, actuation ease/force, and suitability for different body regions. Each pattern was scored based on these objective factors to determine which design would be most effective for passive body-cooling through natural movement. The winning pattern from this evaluation became the foundation for our subsequent sampling and filtering process.</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Slide 2: Physical Study A -->
+                            <div class="carousel-slide">
+                                <div class="carousel-images">
+                                    <img src="../images/projects/airbend/physical-study-a.png" alt="Physical Study A - five pattern combinations">
+                                </div>
+                                <div class="carousel-content">
+                                    <h3>Physical Study A: Initial Sampling</h3>
+                                    <p>We laser-cut five combinations of geometric variables (T, W, L, H) on paper to evaluate performance. Using the MulticolorEngine API, we quantified the percentage of surface opening in each configuration with color-coded overlays—separating cut area (orange) from static surface (purple). Constraints included surface area boundaries based on torso measurements and minimum cut spacing to maintain structural integrity. This revealed a positive correlation between length (L) and height (H) values and total opening area.</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Slide 3: Physical Study B -->
+                            <div class="carousel-slide">
+                                <div class="carousel-images">
+                                    <img src="../images/projects/airbend/physical-study-b.png" alt="Physical Study B - optimized configurations">
+                                </div>
+                                <div class="carousel-content">
+                                    <h3>Physical Study B: Optimization</h3>
+                                    <p>Building on initial findings, we extended L and H values to refine the design for maximal airflow while ensuring material durability. From the first round, we established minimum threshold values necessary for effective actuation: T = 1.7 cm, H = 0.85 cm, W = 0.3 cm, L = 0.7 cm. We then tested larger values and observed fabric behavior under stretch. The optimal configuration was identified as: T = 1.2 cm, H = 0.95 cm, W = 0.4 cm, L = 1.2 cm, achieving up to 19.9% opening area when stretched. Values larger than these were found unsuitable for the project goals.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Carousel Indicators -->
+                        <div class="carousel-indicators">
+                            <span class="indicator active" data-slide="0" data-carousel="1"></span>
+                            <span class="indicator" data-slide="1" data-carousel="1"></span>
+                            <span class="indicator" data-slide="2" data-carousel="1"></span>
+                        </div>
+                    </div>
+                </section>
+
+                <hr>
+
+                <!-- Method 2: Human Form -->
+                <section class="process-carousel">
+                    <h3 id="carousel-title-2">Method 2: Human Form</h3>
+                    
+                    <div class="carousel-container">
+                        <!-- Carousel Navigation -->
+                        <button class="carousel-nav carousel-prev" data-carousel="2" aria-label="Previous slide">‹</button>
+                        <button class="carousel-nav carousel-next" data-carousel="2" aria-label="Next slide">›</button>
+                        
+                        <!-- Carousel Slides -->
+                        <div class="carousel-wrapper" data-carousel="2">
+                            <!-- Slide 1: Sweat Zone Mapping -->
+                            <div class="carousel-slide active">
+                                <div class="carousel-images">
+                                    <img src="../images/projects/airbend/sweat-mapping.png" alt="Body sweat map showing high sweating zones">
+                                </div>
+                                <div class="carousel-content">
+                                    <h3>Sweat Zone Exploration</h3>
+                                    <p>We integrated empirical data from upper body sweat maps to guide kirigami cut placement and pattern scaling. Higher sweating zones—along the middle of the chest and across the back—were prioritized for larger opening scaling. Lower sweating zones received smaller or fewer cuts to balance ventilation with structural coverage. (<a href="https://journals.sagepub.com/doi/10.1177/00405175241268521" target="_blank">Dong et al.</a>)</p>
+                                    <img src="../images/projects/airbend/sweat-mapping-2.png" alt="Sweat zone data visualization" style="margin-top: 1.5rem; width: 100%; height: auto;">
+                                </div>
+                            </div>
+                            
+                            <!-- Slide 2: Movement Analysis -->
+                            <div class="carousel-slide">
+                                <div class="carousel-images">
+                                    <img src="../images/projects/airbend/movement-analysis.png" alt="Body movement zones and stretch mapping">
+                                </div>
+                                <div class="carousel-content">
+                                    <h3>Movement & Stretch Mapping</h3>
+                                    <p>We analyzed how the torso moves during common activities—walking, reaching, bending—to identify areas of maximum fabric stretch. These movement zones were cross-referenced with sweat zones to determine optimal cut placement that would actuate naturally during daily motion.</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Slide 3: Pattern Application -->
+                            <div class="carousel-slide">
+                                <div class="carousel-images">
+                                    <img src="../images/projects/airbend/bodysuit-pattern.png" alt="Final kirigami pattern mapped to bodysuit">
+                                </div>
+                                <div class="carousel-content">
+                                    <h3>Applying Pattern to Bodysuit</h3>
+                                    <p>Using Grasshopper, we established a standard bodysuit geometry and assigned zones correlating to body heat maps. The optimized "winning" pattern was standardized based on a basic unit that could be imported and scaled based on specified zone geometries. The kirigami cut geometries were scaled across sweating zones and morphed to accommodate the 3D curvature of the human body. This pattern-morphing ensured cuts lay comfortably on the user—certain zones are aligned off from 90-degree orientations due to the bodysuit's curves and the objective to conform to body contours.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Carousel Indicators -->
+                        <div class="carousel-indicators">
+                            <span class="indicator active" data-slide="0" data-carousel="2"></span>
+                            <span class="indicator" data-slide="1" data-carousel="2"></span>
+                            <span class="indicator" data-slide="2" data-carousel="2"></span>
+                        </div>
+                    </div>
+                </section>
+
+                <hr>
+
+                <!-- Method 3: Material & Technology -->
+                <section class="process-carousel">
+                    <h3 id="carousel-title-3">Method 3: Material & Technology</h3>
+                    
+                    <div class="carousel-container">
+                        <!-- Carousel Navigation -->
+                        <button class="carousel-nav carousel-prev" data-carousel="3" aria-label="Previous slide">‹</button>
+                        <button class="carousel-nav carousel-next" data-carousel="3" aria-label="Next slide">›</button>
+                        
+                        <!-- Carousel Slides -->
+                        <div class="carousel-wrapper" data-carousel="3">
+                            <!-- Slide 1: Temperature Sensor Testing -->
+                            <div class="carousel-slide active">
+                                <div class="carousel-images">
+                                    <img src="../images/projects/airbend/sensor-testing.png" alt="LilyPad Arduino temperature sensor testing">
+                                </div>
+                                <div class="carousel-content">
+                                    <h3>Temperature Sensor Testing</h3>
+                                    <p>We tested LilyPad Arduino sewable electronics with embedded temperature sensors to enable real-time heat monitoring. Multiple sensor placements were evaluated to capture body temperature variations across sweat zones. The sensors connect to the mobile app via Bluetooth, feeding personalized heat data to the user interface.</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Slide 2: Material Testing -->
+                            <div class="carousel-slide">
+                                <div class="carousel-images">
+                                    <img src="../images/projects/airbend/material-testing.png" alt="Fabric material testing - two poly-blend options">
+                                </div>
+                                <div class="carousel-content">
+                                    <h3>Material Testing</h3>
+                                    <p>We conducted CNC laser cutting tests on two poly-blend fabrics: 85% polyester/15% spandex (blue) and 80% polyester/20% spandex (black). The blue polyblend was selected for the final prototype because it provided the desired stretch, was not see-through, maintained structural integrity, and had better recovery after repeated stretching.</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Slide 3: UI Prototype -->
+                            <div class="carousel-slide">
+                                <div class="carousel-images">
+                                    <img src="../images/projects/airbend/ui-prototype.png" alt="Mobile app UI prototype screens">
+                                </div>
+                                <div class="carousel-content">
+                                    <h3>Integrated App Interface</h3>
+                                    <p>The companion mobile app collects user information (age, health conditions, activity levels) to determine heat sensitivity and set customized alerts. Sign-up pages establish individual temperature thresholds, the profile page stores health data, the monitoring dashboard provides real-time temperature tracking, and the notification system triggers alerts using forced vibration and sends warnings to both users and linked caregiver accounts when extreme heat is detected.</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Slide 4: Laser Cutting & Assembly -->
+                            <div class="carousel-slide">
+                                <div class="carousel-images">
+                                    <img src="../images/projects/airbend/fabrication-assembly.png" alt="Laser cutting and sewing assembly process">
+                                </div>
+                                <div class="carousel-content">
+                                    <h3>Final Prototype Fabrication</h3>
+                                    <p>The final 1:1 scale bodysuit pattern was laser-cut using CNC machines in the College of Human Ecology on a stretchy and lightweight polyblend material. The blue fabric (85% polyester/15% spandex) was selected because it provided the desired stretch, was not see-through, maintained structural integrity, and had better recovery after repeated stretching compared to the black alternative (80% polyester/20% spandex). We sewed the pieces together using a simple straight line stitch along the top and side seams, leaving the armholes and bottom open. This method maintained the fabric's stretch and flexibility while preserving the integrity of the kirigami cut design.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Carousel Indicators -->
+                        <div class="carousel-indicators">
+                            <span class="indicator active" data-slide="0" data-carousel="3"></span>
+                            <span class="indicator" data-slide="1" data-carousel="3"></span>
+                            <span class="indicator" data-slide="2" data-carousel="3"></span>
+                            <span class="indicator" data-slide="3" data-carousel="3"></span>
+                        </div>
+                    </div>
+                </section>
+
+                <hr>
+
+                <!-- Technical Drawings -->
+                <section class="project-section">
+                    <h2>Technical Documentation</h2>
+                    
+                    <h3>Section Drawing</h3>
+                    <div style="overflow: hidden; margin: -8px -5px;">
+                        <img src="../images/projects/airbend/section-drawing.png" alt="Section drawing showing layering of fabric, sensors, and cut geometry" class="clickable-image" style="cursor: pointer; transform: scale(1.03); width: 100%; height: auto;">
+                    </div>
+                    <p style="font-size: 0.9rem; margin-top: 0.5rem; font-style: italic;">Click to view larger</p>
+                    <p>The section drawing reveals the relationship between the outer fabric layer with kirigami cuts, the embedded temperature sensor network, and the inner comfort layer. Cuts are strategically placed to maximize airflow while maintaining structural integrity across high-movement zones.</p>
+                    
+                    <h3>Assembly Drawing</h3>
+                    <img src="../images/projects/airbend/assembly-drawing.png" alt="Assembly drawing showing construction sequence" class="clickable-image" style="cursor: pointer;">
+                    <p style="font-size: 0.9rem; margin-top: 0.5rem; font-style: italic;">Click to view larger</p>
+                    <p>The assembly sequence demonstrates how the front and back bodysuit panels come together, where sensors are embedded, and how the pattern pieces align to create continuous ventilation channels across sweat zones. The modular approach allows for future customization based on individual body measurements.</p>
+                </section>
+
+                <hr>
+
+                <!-- Final Prototype -->
+                <section class="project-section">
+                    <h2>Final Prototype</h2>
+                    <img src="../images/projects/airbend/final-prototype-outdoor.png" alt="AirBend worn outdoors during activity">
+                    <p>The final prototype demonstrates a seamless integration of form, function, and feedback. Through iterative physical studies and computational mapping, AirBend passively cools the body via kirigami-inspired cut patterns that open in response to movement, enhances user awareness through personalized heat monitoring, and responds intelligently to environmental and physiological conditions.</p>
+                    
+                    <div class="two-column">
+                        <div>
+                            <img src="../images/projects/airbend/prototype-front.png" alt="Front view of bodysuit showing chest patterns">
+                            <p>Front pattern optimized for chest ventilation</p>
+                        </div>
+                        <div>
+                            <img src="../images/projects/airbend/prototype-back.png" alt="Back view showing opened kirigami cuts">
+                            <p>Back pattern responding to shoulder movement</p>
+                        </div>
+                    </div>
+                </section>
+
+                <hr>
+
+                <!-- Project Goals & Impact -->
+                <section class="project-section">
+                    <h2>Project Goals & Impact</h2>
+                    
+                    <h3>Core Objectives</h3>
+                    <p><strong>Passive Ventilation:</strong> Achieve effective body cooling without fans or batteries by leveraging kirigami geometry and body motion. Our research demonstrated up to 19.9% surface opening during normal movement.</p>
+                    
+                    <p><strong>Body-Responsive Design:</strong> Map ventilation patterns to empirical sweat data, ensuring cooling occurs where the body needs it most. The computational workflow enables personalized pattern scaling for different body types.</p>
+                    
+                    <p><strong>Integrated Awareness:</strong> Transform a passive wearable into an active safety system through sensor integration and personalized digital feedback, making heat awareness effortless and actionable.</p>
+                    
+                    <h3>Broader Implications</h3>
+                    <p>As climate change intensifies heat exposure globally, AirBend represents a new area of climate-responsive and passive cooling wearable design. The project demonstrates how wearable design can respond to environmental challenges through material innovation and computational optimization rather than energy-intensive solutions. By leveraging the body's natural bending movements, AirBend offers a promising opportunity toward energy-efficient, personalized cooling systems—opening pathways for passive cooling in athletic wear, occupational safety gear, and everyday clothing, particularly for vulnerable populations in resource-limited contexts.</p>
+                </section>
+
+                <hr>
+
+                <!-- Future Explorations -->
+                <section class="project-section">
+                    <h2>Future Explorations</h2>
+                    
+                    <div class="future-dev-item">
+                        <div class="future-dev-content">
+                            <img src="../images/projects/airbend/future-sensing.png" alt="Advanced sensor network concept">
+                            <div>
+                                <h3>Advanced Sensing & Real-Time Adaptation</h3>
+                                <p>Future iterations could integrate flexible temperature and humidity sensors directly into the fabric to enable real-time, localized heat mapping. This would allow the app to provide more granular feedback and potentially connect to shape-memory materials that automatically adjust cut opening sizes based on temperature thresholds—creating a truly autonomous cooling system.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="future-dev-item">
+                        <div class="future-dev-content">
+                            <img src="../images/projects/airbend/future-applications.png" alt="Multiple garment type applications">
+                            <div>
+                                <h3>Expanded Applications & User Groups</h3>
+                                <p>While the current prototype focuses on upper-body athletic wear, the same principles could be applied to different garment types—workwear for outdoor laborers, sleepwear for temperature regulation, or children's clothing. We're particularly interested in exploring applications for vulnerable populations: elderly individuals, outdoor workers in hot climates, and communities in resource-limited contexts where powered cooling is inaccessible.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="future-dev-item">
+                        <div class="future-dev-content">
+                            <img src="../images/projects/airbend/future-materials.png" alt="Sustainable material exploration">
+                            <div>
+                                <h3>Material Innovation & Sustainability</h3>
+                                <p>Exploring bio-based or recycled fabrics that maintain the stretch and recovery properties needed for kirigami actuation. Additionally, investigating materials with inherent cooling properties (phase-change materials, moisture-wicking innovations) that could amplify the passive cooling effect beyond geometric ventilation alone.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h3>Validation & Testing</h3>
+                    <p>Comprehensive user testing is needed to validate cooling effectiveness across different activity levels, body types, and environmental conditions. Thermal imaging studies could quantify temperature reduction and inform further pattern optimization. Long-term wear testing would assess comfort, durability, and real-world performance over time. Future work should include testing optimized cut patterns over a variety of stretchy and breathable fabrics using CNC fabric cutting, and conducting real-world wear testing in different climates to confirm the system's effectiveness.</p>
+                    
+                    <h3>Personalization & Sizing</h3>
+                    <p>While the current prototype demonstrates proof-of-concept, designing for a variety of sizes would enable personalized optimization over bodysuit patterns that accommodate more user body types. The digital workflow established in this project provides a foundation for parametric customization based on body scans and personal heat profiles.</p>
+                    
+                    <h3>Scaling & Manufacturing</h3>
+                    <p>Moving from prototype to production requires developing scalable fabrication methods—potentially exploring CNC knitting or automated laser cutting systems that can customize patterns for individual users. Due to limited availability of laser-cutting machines during development, scaling to broader manufacturing remains an important next step.</p>
                 </section>
             </div>
         </div>
@@ -31,5 +392,104 @@
     </div>
 
     <script src="../scripts/load-components.js"></script>
+    
+    <script>
+        // Image modal functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const modal = document.getElementById('imageModal');
+            const modalImage = document.getElementById('modalImage');
+            const modalExplanation = document.getElementById('modalExplanation');
+            const clickableImages = document.querySelectorAll('.clickable-image');
+            const closeModal = document.querySelector('.close-modal');
+            
+            // Open modal when clicking on clickable images
+            clickableImages.forEach(img => {
+                img.addEventListener('click', function() {
+                    modal.style.display = 'block';
+                    modalImage.src = this.src;
+                    
+                    // Show explanation only for system diagram
+                    if (this.dataset.showExplanation === 'true') {
+                        modalExplanation.style.display = 'block';
+                    } else {
+                        modalExplanation.style.display = 'none';
+                    }
+                });
+            });
+            
+            // Close modal when clicking the X or anywhere on the modal
+            closeModal.addEventListener('click', function() {
+                modal.style.display = 'none';
+            });
+            
+            modal.addEventListener('click', function(e) {
+                // Only close if clicking directly on the modal background, not on image or text
+                if (e.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+            
+            // Close modal with Escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && modal.style.display === 'block') {
+                    modal.style.display = 'none';
+                }
+            });
+        });
+        
+        // Carousel functionality - handles multiple independent carousels
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize each carousel separately
+            initCarousel(1);
+            initCarousel(2);
+            initCarousel(3);
+            
+            function initCarousel(carouselId) {
+                const wrapper = document.querySelector(`.carousel-wrapper[data-carousel="${carouselId}"]`);
+                if (!wrapper) return;
+                
+                const slides = wrapper.querySelectorAll('.carousel-slide');
+                const indicators = document.querySelectorAll(`.indicator[data-carousel="${carouselId}"]`);
+                const prevBtn = document.querySelector(`.carousel-prev[data-carousel="${carouselId}"]`);
+                const nextBtn = document.querySelector(`.carousel-next[data-carousel="${carouselId}"]`);
+                let currentSlide = 0;
+                
+                function showSlide(n) {
+                    // Hide all slides in this carousel
+                    slides.forEach(slide => slide.classList.remove('active'));
+                    indicators.forEach(indicator => indicator.classList.remove('active'));
+                    
+                    // Handle wrap around
+                    if (n >= slides.length) currentSlide = 0;
+                    if (n < 0) currentSlide = slides.length - 1;
+                    
+                    // Show current slide
+                    slides[currentSlide].classList.add('active');
+                    indicators[currentSlide].classList.add('active');
+                }
+                
+                function nextSlide() {
+                    currentSlide++;
+                    showSlide(currentSlide);
+                }
+                
+                function prevSlide() {
+                    currentSlide--;
+                    showSlide(currentSlide);
+                }
+                
+                // Event listeners
+                if (prevBtn) prevBtn.addEventListener('click', prevSlide);
+                if (nextBtn) nextBtn.addEventListener('click', nextSlide);
+                
+                indicators.forEach((indicator, index) => {
+                    indicator.addEventListener('click', () => {
+                        currentSlide = index;
+                        showSlide(currentSlide);
+                    });
+                });
+            }
+        });
+    </script>
 </body>
 </html>

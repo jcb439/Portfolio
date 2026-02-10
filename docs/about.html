@@ -49,6 +49,33 @@
             from { opacity: 0; }
             to { opacity: 1; }
         }
+
+        /* CEI Research image container - responsive */
+        .cei-research-container {
+            display: flex;
+            gap: 2rem;
+            align-items: flex-start;
+            margin: 2rem 0;
+        }
+
+        .cei-research-container img {
+            width: 300px;
+            height: auto;
+            border-radius: 8px;
+            flex-shrink: 0;
+        }
+
+        /* Mobile responsive - stack image on top */
+        @media (max-width: 768px) {
+            .cei-research-container {
+                flex-direction: column;
+            }
+
+            .cei-research-container img {
+                width: 100%;
+                max-width: 400px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -97,8 +124,8 @@
                     
                     <p>My research interests extend beyond the aesthetics of design, focusing on technologies that tackle global issues and make individuals' daily lives easier. I'm particularly passionate about sustainable design solutions and the role of technology in addressing real-world challenges.</p>
                     
-                    <div style="display: flex; gap: 2rem; align-items: flex-start; margin: 2rem 0;">
-                        <img src="images/cei-research.jpg" alt="Research at Cape Eleuthera Institute" style="width: 300px; height: auto; border-radius: 8px; flex-shrink: 0;">
+                    <div class="cei-research-container">
+                        <img src="images/cei-research.jpg" alt="Research at Cape Eleuthera Institute">
                         <div>
                             <p>Through my work with the <a href="https://islandschool.org/cape-eleuthera-institute/about-us-cei/" target="_blank">Center for Sustainable Development at the Cape Eleuthera Institute</a>, I explored the intersection of sustainability and design technology, delving into waste management systems and researching mycelium as a sustainable material specifically for fashion integrations. This experience reinforced my dedication to finding sustainable and ethical solutions while engaging local stakeholders in shaping meaningful change.</p>
                         </div>

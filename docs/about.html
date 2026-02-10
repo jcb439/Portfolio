@@ -5,6 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About - Julia Beitel</title>
     <link rel="stylesheet" href="styles/main.css">
+    <style>
+        /* Section Navigation Buttons */
+        .section-nav {
+            display: flex;
+            gap: 1rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .section-nav button {
+            font-family: "Courier New", "Monaco", monospace;
+            font-size: 1rem;
+            padding: 0.75rem 1.5rem;
+            background-color: #ffffff;
+            border: 2px solid rgba(0, 0, 0, 0.85);
+            color: rgba(0, 0, 0, 0.85);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .section-nav button:hover {
+            background-color: rgba(0, 0, 0, 0.85);
+            color: #ffffff;
+        }
+        
+        .section-nav button.active {
+            background-color: rgba(0, 0, 0, 0.85);
+            color: #ffffff;
+        }
+        
+        /* Content sections - hidden by default */
+        .content-section {
+            display: none;
+            animation: fadeIn 0.3s ease-in;
+        }
+        
+        .content-section.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation Placeholder -->
@@ -19,9 +64,67 @@
 
                 <hr>
 
-                <section>
-                    <!-- Your about content goes here -->
-                    <p>Content coming soon...</p>
+                <!-- Photo and Bio Section -->
+                <section class="hero-with-text">
+                    <div class="hero-image-half">
+                        <img src="images/julia-photo.jpg" alt="Julia Beitel" style="border-radius: 8px;">
+                    </div>
+                    
+                    <div class="hero-text-half">
+                        <p>I'm a resourceful, driven, and dedicated designer and researcher currently pursuing a Master of Science in <a href="https://designtech.cornell.edu/design-tech/master-of-science-in-design-technology/" target="_blank">Design Technology</a> at Cornell University. I graduated from Cornell in 2024 with a B.S. in Information Science and a minor in Environment & Sustainability, where I was a Milstein Program Scholar—beginning my exploration of the intersections between the humanities and technology.</p>
+                        
+                        <p>My professional interests lie at the intersection of design and technology, focusing on how thoughtful, ethical, and creative solutions can be applied to make the world a better, more sustainable place. I consider myself a visual thinker, observing the world through a creative lens and consistently approaching problems with an unconventional mindset.</p>
+                        
+                        <p><a href="https://tech.cornell.edu/news/julia-beitel/" target="_blank">Click to read more about my work at Cornell Tech</a></p>
+                    </div>
+                </section>
+
+                <hr>
+
+                <!-- Section Navigation -->
+                <div class="section-nav">
+                    <button class="section-btn active" data-section="research">Research & Interests</button>
+                    <button class="section-btn" data-section="skills">Top Skills & Tools</button>
+                    <button class="section-btn" data-section="community">Community & Values</button>
+                </div>
+
+                <!-- Research & Interests Section -->
+                <section id="research-section" class="content-section active project-section">
+                    <h2>Research & Interests</h2>
+                    
+                    <p>My research interests extend beyond the aesthetics of design, focusing on technologies that tackle global issues and make individuals' daily lives easier. I'm particularly passionate about sustainable design solutions and the role of technology in addressing real-world challenges.</p>
+                    
+                    <div style="display: flex; gap: 2rem; align-items: flex-start; margin: 2rem 0;">
+                        <img src="images/cei-research.jpg" alt="Research at Cape Eleuthera Institute" style="width: 300px; height: auto; border-radius: 8px; flex-shrink: 0;">
+                        <div>
+                            <p>Through my work with the <a href="https://islandschool.org/cape-eleuthera-institute/about-us-cei/" target="_blank">Center for Sustainable Development at the Cape Eleuthera Institute</a>, I explored the intersection of sustainability and design technology, delving into waste management systems and researching mycelium as a sustainable material specifically for fashion integrations. This experience reinforced my dedication to finding sustainable and ethical solutions while engaging local stakeholders in shaping meaningful change.</p>
+                        </div>
+                    </div>
+                    
+                    <p>I'm also deeply committed to ethical AI advocacy and creating inclusive spaces in technology. I believe the best ideas that target the world's problems are developed with a diverse range of viewpoints and perspectives. My commitment to understanding the barriers faced by others serves as a foundational principle that guides my academic and research pursuits.</p>
+                </section>
+
+                <!-- Skills & Tools Section -->
+                <section id="skills-section" class="content-section project-section">
+                    <h2>Top Skills & Tools <span style="font-size: 0.9rem; font-weight: normal; margin-left: 1rem;"><a href="resume.html">View full resume</a></span></h2>
+                    
+                    <h3>Design & Prototyping</h3>
+                    <p>Rhino, Grasshopper, Figma, Adobe Creative Suite, Procreate, 3D printing, laser cutting</p>
+                    
+                    <h3>Development & Technology</h3>
+                    <p>Python, HTML/CSS, Arduino, Processing, React, computational design</p>
+                    
+                    <h3>Areas of Focus</h3>
+                    <p>Innovative AI tools, sustainable design, UX/UI design, prototyping, design technology, human-centered design</p>
+                </section>
+
+                <!-- Community & Values Section -->
+                <section id="community-section" class="content-section project-section">
+                    <h2>Community & Values</h2>
+                    
+                    <p>Beyond my academic and professional work, I hold a strong belief in the core values of inclusion, respect, and kindness. My volunteer work with the <a href="https://www.facinghomelessness.org/" target="_blank">Facing Homelessness</a> project in Seattle—from the Window of Kindness to conducting ethnographic interviews with <a href="https://www.the-block-project.org/" target="_blank">the Block Project</a>—demonstrates my hands-on approach to understanding and addressing community issues.</p>
+                    
+                    <p>I've learned the importance of creating inclusive spaces and harnessing the power of kindness and acceptance in daily interactions. These experiences have shaped my approach to design and technology, reinforcing the need for diverse perspectives in developing ethical and responsible solutions.</p>
                 </section>
             </div>
         </div>
@@ -31,5 +134,27 @@
     </div>
 
     <script src="scripts/load-components.js"></script>
+    
+    <script>
+        // Section navigation functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const buttons = document.querySelectorAll('.section-btn');
+            const sections = document.querySelectorAll('.content-section');
+            
+            buttons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const targetSection = this.getAttribute('data-section');
+                    
+                    // Remove active class from all buttons and sections
+                    buttons.forEach(btn => btn.classList.remove('active'));
+                    sections.forEach(section => section.classList.remove('active'));
+                    
+                    // Add active class to clicked button and corresponding section
+                    this.classList.add('active');
+                    document.getElementById(targetSection + '-section').classList.add('active');
+                });
+            });
+        });
+    </script>
 </body>
 </html>
